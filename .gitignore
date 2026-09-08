@@ -1,0 +1,4 @@
+node_modules
+.next
+data/shortlists.json
+.DS_Store
