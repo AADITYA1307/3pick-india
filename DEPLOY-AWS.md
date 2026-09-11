@@ -34,7 +34,7 @@ Ensure latest code (including `amplify.yml`) is on GitHub.
 1. AWS Console → search **Amplify** → **Create new app**
 2. **Host web app** → **GitHub** → authorize → select **`3pick-india`**
 3. Branch: **main**
-4. Amplify should detect **Next.js** and use `amplify.yml`
+4. Amplify should detect **Next.js SSR** and use `amplify.yml` (no static `artifacts` block — that breaks App Router apps)
 
 ### 3. Environment variables
 
