@@ -23,6 +23,6 @@ export async function POST(req) {
     weights: result.weights,
     memo,
   };
-  saveShortlist(record);
+  await saveShortlist(record);
   return Response.json(record);
 }

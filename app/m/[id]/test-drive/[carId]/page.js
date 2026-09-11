@@ -5,8 +5,8 @@ import { buildMemo, scoreCatalog } from "../../../../../lib/score.js";
 
 export const dynamic = "force-dynamic";
 
-export default function TestDrivePage({ params }) {
-  const record = getShortlist(params.id);
+export default async function TestDrivePage({ params }) {
+  const record = await getShortlist(params.id);
   if (!record) notFound();
 
   const result = scoreCatalog(record.answers);
@@ -14,7 +14,7 @@ export default function TestDrivePage({ params }) {
   const pick = memo.picks.find((p) => p.carId === params.carId);
   if (!pick) notFound();
 
-  const existingBooking = getTestDriveBooking(params.id, params.carId);
+  const existingBooking = await getTestDriveBooking(params.id, params.carId);
 
   return (
     <TestDriveBookingClient

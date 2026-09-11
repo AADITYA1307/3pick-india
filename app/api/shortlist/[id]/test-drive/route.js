@@ -4,7 +4,7 @@ import { normalizeTestDriveBooking, slotLabel, validateTestDriveBooking } from "
 import { getShortlist, saveTestDriveBooking } from "../../../../../lib/store.js";
 
 export async function POST(req, { params }) {
-  const record = getShortlist(params.id);
+  const record = await getShortlist(params.id);
   if (!record) return Response.json({ error: "Not found" }, { status: 404 });
 
   const body = await req.json().catch(() => null);
@@ -13,7 +13,7 @@ export async function POST(req, { params }) {
   if (error) return Response.json({ error }, { status: 400 });
   if (!booking.carId || !booking.carName) return Response.json({ error: "Missing car details." }, { status: 400 });
 
-  const saved = saveTestDriveBooking(params.id, {
+  const saved = await saveTestDriveBooking(params.id, {
     ...booking,
     slotLabel: slotLabel(booking.slot),
   });

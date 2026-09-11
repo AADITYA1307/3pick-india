@@ -145,3 +145,5 @@ data/shortlists.json                 Saved results (gitignored)
 ```
 
 See [HOW-WE-GOT-HERE.md](./HOW-WE-GOT-HERE.md) for the prompt log and course corrections.
+
+**Deploy on AWS:** step-by-step guide in [DEPLOY-AWS.md](./DEPLOY-AWS.md) (Amplify + S3, or EC2).
